@@ -1,0 +1,58 @@
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 修改1：按钮容器改为 flex 换行布局 */
+.button-list {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  gap: 15px; /* 按钮之间的间距 */
+}
+.button-list::after {
+  content: "";
+  flex: 1 0 calc(50% - 7.5px); /* 占位元素宽度与按钮一致 */
+  height: 0; /* 隐藏占位元素 */
+}
+/* 修改2：每个按钮占 50% 宽度（留出间距空间） */
+.sound-button {
+  flex: 0 0 calc(50% - 7.5px); /* 总宽度减半并扣除间隙的一半 */
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+  box-sizing: border-box; /* 防止宽度超出 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.button-title {
+  font-size: 16px;
+  color: #ff8c00;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.button-desc {
+  font-size: 12px;
+  color: #666;
+  display: block;
+}
+/* 新增分类标题样式 */
+.category-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+  padding-left: 5px;  
+}
+
+/* 原有其他样式保持不变... */
+.active {
+  background-color: #ffe4b5;
+}

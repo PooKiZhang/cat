@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="title">点击按钮播放猫咪叫声</view>
+  
+  <!-- 循环遍历分类 -->
+  <block wx:for="{{categories}}" wx:key="title">
+    <!-- 分类标题 -->
+    <view class="category-title">{{item.title}}</view>
+    
+    <!-- 分类下的按钮列表 -->
+    <view class="button-list">
+      <block wx:for="{{item.buttons}}" wx:key="name">
+        <button 
+          class="sound-button {{currentSound === item.name ? 'active' : ''}}"
+          hover-class="none"
+          bindtap="toggleSound"
+          data-name="{{item.name}}"
+          data-url="{{item.url}}"
+        >
+          <text class="button-title">{{item.title}}</text>
+          <text class="button-desc">{{item.desc}}</text>
+        </button>
+      </block>
+    </view>
+  </block>
+</view>
